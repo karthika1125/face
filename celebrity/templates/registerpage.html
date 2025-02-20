@@ -1,0 +1,228 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | StarFinder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<style>
+    /* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Navigation Bar */
+header {
+    width: 100%;
+    background: #333;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+nav a:hover, .active {
+    color: #ffcc00;
+}
+
+/* Register Section */
+#register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100%;
+}
+
+.register-container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+.register-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form Styling */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #ffcc00;
+    box-shadow: 0 0 5px rgba(255, 204, 0, 0.5);
+}
+
+/* Register Button */
+.register-btn {
+    width: 100%;
+    background: #ffcc00;
+    color: black;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.register-btn:hover {
+    background: #ffdb4d;
+}
+
+/* Register Status Message */
+#register-status {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #d9534f;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    background: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+footer a {
+    color: #ffcc00;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+</style>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="howitwork.html">How It Works</a>
+            <a href="register.html" class="active">Register</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Register Section -->
+    <section id="register">
+        <div class="register-container">
+            <h2>Create an Account</h2>
+            <form id="register-form">
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    
+                </div>
+
+                <div class="input-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+
+                <button type="submit" class="register-btn">Register</button>
+            </form>
+            <p id="register-status"></p>
+            <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 StarFinder. All Rights Reserved.</p>
+        <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a>
+    </footer>
+
+    <script>
+        document.getElementById('register-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+    
+            if (password !== confirmPassword) {
+                document.getElementById('register-status').textContent = '❌ Passwords do not match!';
+                return;
+            }
+    
+            document.getElementById('register-status').textContent = '✅ Registering...';
+    
+            setTimeout(() => {
+                // Store login status in localStorage
+                localStorage.setItem("userLoggedIn", "true");
+    
+                document.getElementById('register-status').textContent = '🎉 Registration successful!';
+                
+                // Redirect to How It Works page
+                setTimeout(() => {
+                    window.location.href = "how-it-works.html";
+                }, 1000);
+            }, 2000);
+        });
+    </script>
+    
+
+</body>
+</html>

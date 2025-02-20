@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | StarFinder</title>
+    
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        .faq-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        .faq-item {
+            margin-bottom: 10px;
+        }
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            background: #007BFF;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            border-left: 3px solid #007BFF;
+            margin-top: 5px;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">What is StarFinder?</div>
+            <div class="faq-answer">StarFinder is a platform that helps you find your celebrity lookalike using AI.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How does it work?</div>
+            <div class="faq-answer">You can upload a photo or use live recognition, and our AI will find your closest celebrity match.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Is my data secure?</div>
+            <div class="faq-answer">Yes, we prioritize user privacy and do not store your uploaded images.</div>
+        </div>
+    </div>
+    
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>

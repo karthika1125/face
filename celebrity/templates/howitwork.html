@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works | StarFinder</title>
+    <link rel="stylesheet" href="{% static 'css/workstyle.css' %}">
+</head>
+<body>
+
+    <!-- Header Section -->
+     <header>
+        <nav>
+            <a href="{% url 'index' %}">Home</a>
+            <a href="/how-it-works">How It Works</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </nav>
+    </header>
+
+    
+    <section id="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <img src="{% static 'images/camer.png.png' %}" alt="Upload Icon">
+                <p>Upload Your Photo</p>
+            </div>
+            <div class="step">
+                <img src="{% static 'images/ai.png.png' %}" alt="AI Icon">
+                <p>AI Does the Magic</p>
+            </div>
+            <div class="step">
+                <img src="{% static 'images/result.png.png' %}" alt="Result Icon">
+                <p>Get Your Results</p>
+            </div>
+        </div>
+
+        <div class="upload-section">
+            <h3>Upload Your Photo</h3>
+            <form id="photo-upload-form" enctype="multipart/form-data">
+                <input type="file" id="photo-upload" name="photo" accept="image/*" required>
+                <button type="submit">Upload Photo</button>
+                
+            </form>
+            <p id="upload-status"></p>
+        </div>
+    </section>
+
+    
+    <footer>
+        <p>&copy; 2025 StarFinder. All Rights Reserved.</p>
+        <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a>
+    </footer>
+
+    
+
+
+    <script>
+        // Check if the user is logged in
+        document.addEventListener("DOMContentLoaded", function () {
+            const userLoggedIn = localStorage.getItem("userLoggedIn");
+
+            // If not logged in, redirect to Register page
+            if (!userLoggedIn) {
+                alert("You need to register before uploading a photo!");
+                window.location.href = "{% url 'register' %}";
+            }
+        });
+
+        // Photo Upload Simulation
+        document.getElementById('photo-upload-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const fileInput = document.getElementById('photo-upload');
+            const file = fileInput.files[0];
+
+            if (file) {
+                document.getElementById('upload-status').textContent = 'Uploading...';
+
+                // Simulating the upload process
+                setTimeout(function() {
+                    document.getElementById('upload-status').textContent = 'Upload successful! Your celebrity twin will be matched soon.';
+                }, 2000);
+            }
+        });
+    </script>
+
+</body>
+</html>
+ 
+
+
+
+ 

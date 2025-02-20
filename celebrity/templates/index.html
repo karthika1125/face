@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Celebrity Look-Alike</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">StarFinder</div>
+        <nav>
+            
+        </a>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="{% url 'howitwork' %}">How it Works</a></li>
+                <li><a href="{% url 'live' %}">Live</a></li>
+                <li><a href="{% url 'faq' %}">FAQ</a></li>
+                <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                <li><a href="{% url 'register' %}">Sign Up</a></li> <!-- Link to Register Page -->
+            </ul>
+        </nav>
+        
+    </header>
+    
+    <section class="hero">
+        <img src="{% static 'images/hero-image.jpg.webp' %}" alt="Hero Image" class="hero-image">
+        <h1>Find Your Celebrity Twin</h1>
+        <p>Upload a photo and discover which celebrity you look like!</p>
+        <a href="{% url 'register' %}"><button>Get Started</button></a> <!-- Link to Register Page -->
+    </section>
+    
+    
+    <section id="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <img src="{% static 'images/upload-icon.png.png' %}" alt="Upload Icon">
+                <p>Upload Your Photo</p>
+            </div>
+            <div class="step">
+                <img src="{% static 'images/ai-icon.png.png' %}" alt="AI Icon">
+                <p>AI Does the Magic</p>
+            </div>
+            <div class="step">
+                <img src="{% static 'images/result-icon.png.png' %}" alt="Result Icon">
+                <p>Get Your Results</p>
+            </div>
+        </div>
+      
+    </section>
+    
+    <section id="featured-celebrities">
+        <h2>Meet Your Favorite Celebrities</h2>
+        <div class="celebrity-grid">
+            <div class="celebrity">
+                <img src="{% static 'images/celebrity1.jpg' %}" alt="Tom Cruise">
+                <p>Tom Cruise</p>
+                </a>
+            </div>
+            <div class="celebrity">
+                <img src="{% static 'images/celebrity2.jpg' %}" alt="Emma Watson">
+                <p>Emma Watson</p>
+                </a>
+            </div>
+            <div class="celebrity">
+                <img src="{% static 'images/celebrity3.jpg' %}" alt="Virat Kohli">
+                <p>Virat Kohli</p>
+                </a>
+            </div>
+            <div class="celebrity">
+                <img src="{% static 'images/celebrity4.jpg' %}" alt="Deepika Padukone">
+                <p>Deepika Padukone</p>
+                </a>
+            </div>
+            <div class="celebrity">
+                <img src="{% static 'images/celebrity5.jpg' %}" alt="Dulquer Salmaan">
+                <p>Dulquer Salmaan</p>
+                </a>
+            </div>
+            <div class="celebrity">
+                 <img src="{% static 'images/celebrity6.jpg' %}" alt="Taylor Swift">
+                 <p>Taylor Swift</p>
+                </a>
+            </div>
+            <div class="celebrity">
+                <img src="{% static 'images/celebrity7.jpg' %}" alt="Gong Yoo">
+                <p>Gong Yoo</p>
+                </a>
+            </div>
+            <div class="celebrity">
+                <img src="{% static 'images/celebrity8.jpg' %}" alt="V">
+                <p>V</p>
+                </a>
+            </div>
+            <div class="celebrity">
+                <img src="{% static 'images/celebrity9.jpg' %}" alt="Mohanlal">
+                <p>Mohanlal</p>
+                </a>
+            </div>
+            <div class="celebrity">
+                <img src="{% static 'images/celebrity10.jpg' %}" alt="Nayanthara">
+                <p>Nayanthara</p>
+                </a>
+            
+            </div>
+            <div class="button">
+                <a href="{% url 'celebrityinfo' %}"><button>Get More Info</button></a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="testimonials">
+        <h2>What Our Users Are Saying</h2>
+        <div class="testimonial">
+            <p>"I can't believe I got matched with someone who looks like Emma Watson! It was surreal!"</p>
+            <p>- Sarah, LA</p>
+        </div>
+        <div class="testimonial">
+            <p>"I found my celebrity twin! I matched with Ryan Reynolds—such a fun experience!"</p>
+            <p>- John, New York</p>
+        </div>
+        <div class="testimonial">
+            <p>"This app is incredible! I got matched with a celebrity look-alike, and we even share the same interests!"</p>
+            <p>- Emily, London</p>
+        </div>
+        <div class="testimonial">
+            <p>"Never thought I'd find someone who looks so much like my favorite star. This is a game-changer!"</p>
+            <p>- Michael, San Francisco</p>
+        </div>
+        <div class="testimonial">
+            <p>"Matched with someone who could be my twin, and it was a blast chatting with them!"</p>
+            <p>- Olivia, Toronto</p>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>&copy; 2025 StarFinder. All Rights Reserved.</p>
+                <p>Find your celebrity twin and connect with others who share your star-studded features!</p>
+            </div>
+            <div class="footer-middle">
+                <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a> | <a href="faq.html">FAQ</a>
+            </div>
+            <div class="footer-right">
+                <h4>Connect with Us</h4>
+                <ul class="social-links">
+                    <li><a href="https://facebook.com/starfinder" target="_blank">Facebook</a></li>
+                    <li><a href="https://twitter.com/starfinder" target="_blank">Twitter</a></li>
+                    <li><a href="https://instagram.com/starfinder" target="_blank">Instagram</a></li>
+                    <li><a href="https://linkedin.com/company/starfinder" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

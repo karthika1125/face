@@ -1,0 +1,405 @@
+ /* CSS Styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #07d511, #b513aa);
+    color: white;
+    padding: 20px 10%;
+    border-bottom: 3px solid #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 12px 18px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.5);
+    color: #000;
+}
+
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #85d489, #d6a6d3);
+    color: rgb(15, 15, 15);
+    position: relative;
+}
+
+.hero-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit:cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.hero-image:hover {
+    transform: scale(1.02);
+}
+/* Basic styles for the button */
+.hero button {
+    background-color: #ff7f50;  
+    color: white;               
+    font-size: 1.2rem;          
+    padding: 12px 24px;         
+    border: none;               
+    border-radius: 25px;       
+    cursor: pointer;           
+    transition: background-color 0.3s, transform 0.2s;  
+}
+
+/* Hover effect */
+.hero button:hover {
+    background-color: #e56b3f;  
+    transform: scale(1.05);      
+}
+
+
+.hero button:focus {
+    outline: none;               
+    box-shadow: 0 0 5px rgba(255, 127, 80, 0.8);  
+}
+
+
+
+/* Basic styles for the section */
+#how-it-works {
+    padding: 50px 0;
+    background: linear-gradient(135deg, #c0dd61, #9f9fbd);
+    text-align: center;
+}
+
+/* Heading style */
+#how-it-works h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Styles for steps container */
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Individual step styles */
+.step {
+    background: linear-gradient(135deg, #33463d, #6fd4ad);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
+}
+
+/* Icon style */
+.step img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+/* Paragraph style */
+.step p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+}
+
+/* Make it responsive for smaller screens */
+@media (max-width: 768px) {
+    .steps {
+        flex-direction: column;
+        align-items: center;
+    }
+    .step {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+/* .steps {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 20px;
+} */
+
+/* Styling the Featured Celebrities section */
+#featured-celebrities {
+    padding: 50px 0;
+    background: linear-gradient(135deg, #85d489, #d6a6d3);
+    text-align: center;
+}
+
+/* Heading style */
+#featured-celebrities h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Celebrity grid layout */
+.celebrity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+/* Individual celebrity styling */
+.celebrity {
+    background-color: #f5f6f6;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+/* Celebrity image styling */
+.celebrity img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; /* Ensures the image covers the area without distorting */
+    border-bottom: 3px solid #ff7f50; /* Adds a subtle border under the image */
+}
+
+/* Celebrity name styling */
+.celebrity p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Hover effect for celebrities */
+.celebrity:hover {
+    transform: translateY(-10px); /* Slightly lift the card */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Add a stronger shadow */
+}
+
+/* Make it responsive for smaller screens */
+@media (max-width: 768px) {
+    #featured-celebrities h2 {
+        font-size: 2rem;  /* Slightly smaller heading on small screens */
+    }
+}
+
+button {
+    background-color: #ff7f50;  
+    color: white;               
+    font-size: 1.2rem;          
+    padding: 12px 24px;         
+    border: none;               
+    border-radius: 25px;       
+    cursor: pointer;           
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s ease-in-out;  
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
+}
+
+button:hover {
+    background-color: #e56b3f;  
+    transform: scale(1.05);      
+}
+
+button:active {
+    transform: scale(0.98); /* "Press" effect when clicked */
+}
+
+button:focus {
+    outline: none;              
+    box-shadow: 0 0 8px rgba(255, 127, 80, 0.8);  
+    background-color: #e56b3f; /* Change background on focus */
+}
+
+button:disabled {
+    background-color: #f2a19e; /* Disabled state */
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+
+/* Styling the Testimonials section */
+#testimonials {
+    padding: 50px 0;
+    background: linear-gradient(135deg, #33463d, #6fd4ad);
+    text-align: center;
+}
+
+/* Heading style */
+#testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Testimonial container */
+.testimonial {
+    background: linear-gradient(135deg, #c0dd61, #9f9fbd);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Quote text style */
+.testimonial p:first-of-type {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* User's name styling */
+.testimonial p:last-of-type {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ff7f50; /* Use a standout color for the name */
+}
+
+/* Add hover effect for the testimonial */
+.testimonial:hover {
+    transform: translateY(-5px); /* Slightly lift the box */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow for hover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    #testimonials h2 {
+        font-size: 2rem;  /* Smaller heading for mobile */
+    }
+}
+
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Copyright text */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.footer-left, .footer-middle, .footer-right {
+    flex: 1;
+    margin: 10px;
+}
+.footer-left p {
+    margin: 5px 0;
+}
+.footer-middle a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+.footer-middle a:hover {
+    text-decoration: underline;
+}
+.social-links {
+    list-style-type: none;
+    padding: 0;
+}
+.social-links li {
+    display: inline;
+    margin: 0 10px;
+}
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+}
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* General Page Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #4CAF50;
+    padding: 15px;
+    text-align: center;
+}
+
+header nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
