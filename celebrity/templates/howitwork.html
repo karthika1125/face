@@ -58,15 +58,7 @@
 
     <script>
         // Check if the user is logged in
-        document.addEventListener("DOMContentLoaded", function () {
-            const userLoggedIn = localStorage.getItem("userLoggedIn");
-
-            // If not logged in, redirect to Register page
-            if (!userLoggedIn) {
-                alert("You need to register before uploading a photo!");
-                window.location.href = "{% url 'register' %}";
-            }
-        });
+       
 
         // Photo Upload Simulation
         document.getElementById('photo-upload-form').addEventListener('submit', function(event) {

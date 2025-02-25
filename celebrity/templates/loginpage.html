@@ -128,13 +128,20 @@
 <body>
     <div class="container">
         <h2>Login</h2>
-        <form action="#" method="POST">
+        {% if messages %}
+                {% for message in messages %}
+                <p style="color: red;">{{ message }}</p>
+                {% endfor %}
+        {% endif %}
+
+        <form  method="POST">
+            {% csrf_token %}
             <div class="input-group">
-                <input type="text" placeholder="Username" required>
+                <input type="text"name="username" placeholder="Username" required>
                 <span class="icon">👤</span>
             </div>
             <div class="input-group">
-                <input type="password" id="password" placeholder="Password" required>
+                <input type="password" name="password" id="password" placeholder="Password" required>
                 <span class="icon" onclick="togglePassword()">👁️</span>
             </div>
             <button type="submit">Login</button>

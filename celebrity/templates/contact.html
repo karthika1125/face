@@ -47,7 +47,14 @@
 </head>
 <body>
     <h2>Contact Us</h2>
-    <form id="contact-form">
+    {% if messages %}
+                {% for message in messages %}
+                <p style="color: red;">{{ message }}</p>
+                {% endfor %}
+        {% endif %}
+
+    <form  method="POST">
+        {% csrf_token %}
         <input type="text" id="name" name="name" placeholder="Your Name" required>
         <input type="email" id="email" name="email" placeholder="Your Email" required>
         <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
