@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from . models import contact
+from.forms import imageform
 
 def register(request):
     if request.method=='POST':
@@ -72,8 +73,7 @@ def contact_view(request):
 def index(request):
     return render(request,'index.html')
 
-def howitwork(request):
-    return render(request,'howitwork.html')
+
 
 def celebrityinfo(request):
     return render(request,'celebrityinfo.html')
@@ -82,7 +82,26 @@ def home(request):
     return render(request,'home.html',{'user': request.user})
 
 
+from django.shortcuts import render
+from .forms import imageform  # Make sure to import the correct form
 
+from django.shortcuts import render
+from django.contrib import messages
+from .forms import imageform
+from django.contrib import messages
+
+def howitwork(request):
+    if request.method == "POST":
+        form = imageform(request.POST, request.FILES)
+        if form.is_valid():  # Check if the form is valid
+            form.save()  # Save the form data
+            messages.success(request, 'Photo uploaded successfully! Your celebrity twin will be matched soon.')
+        else:
+            messages.error(request, 'There was an error with your upload. Please try again.')
+    else:
+        form = imageform()  # Create an empty form for GET requests
+            
+    return render(request, 'howitwork.html', {'form': form})
 
 
 # Create your views here.
